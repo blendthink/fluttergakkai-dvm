@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "dart",
+            "request": "launch",
+            "name": "macOS",
+            "args": [
+                "-d",
+                "macos",
+            ],
+        },
+        {
+            "type": "dart",
+            "request": "launch",
+            "name": "web",
+            "args": [
+                "-d",
+                "chrome",
+            ],
+        },
+    ]
+}
