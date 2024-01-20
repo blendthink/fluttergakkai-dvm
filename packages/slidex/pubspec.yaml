@@ -1,7 +1,7 @@
 name: slidex
 description: "A new Flutter package project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/blendthink/fluttergakkai-dvm/tree/main/packages/slidex
 
 environment:
   sdk: '>=3.2.5 <4.0.0'
