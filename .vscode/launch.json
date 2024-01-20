@@ -17,6 +17,8 @@
             "args": [
                 "-d",
                 "chrome",
+                "--web-renderer",
+                "canvaskit",
             ],
         },
     ]
