@@ -4,8 +4,8 @@ import 'package:collection/collection.dart';
 import 'package:desktop_multi_window/desktop_multi_window.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:slidex/src/internal/home/slide_home.dart';
 import 'package:slidex/src/components/slide_widget.dart';
+import 'package:slidex/src/internal/home/slide_home.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'shell');
