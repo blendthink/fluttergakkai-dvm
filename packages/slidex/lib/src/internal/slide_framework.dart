@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:slidex/src/internal/home/menu/slide_menu.dart';
 import 'package:slidex/src/internal/slide_router.dart';
-import 'package:slidex/src/slide_widget.dart';
+import 'package:slidex/src/components/slide_widget.dart';
 
 final class SlideFramework extends InheritedWidget {
   const SlideFramework({

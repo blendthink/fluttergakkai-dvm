@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:slidex/src/components/slide_widget.dart';
 import 'package:slidex/src/internal/home/menu/slide_menu.dart';
 import 'package:slidex/src/internal/slide_framework.dart';
 import 'package:slidex/src/internal/slide_intents.dart';
 import 'package:slidex/src/internal/slide_query.dart';
 import 'package:slidex/src/internal/slide_router.dart';
-import 'package:slidex/src/slide_widget.dart';
 
 final class SlideApp extends StatefulWidget {
   const SlideApp({

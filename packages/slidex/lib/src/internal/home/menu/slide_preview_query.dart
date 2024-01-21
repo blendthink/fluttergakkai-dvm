@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:slidex/src/slide_widget.dart';
+import 'package:slidex/src/components/slide_widget.dart';
 
 enum SlidePreviewQueryAspect {
   slideIndex,
