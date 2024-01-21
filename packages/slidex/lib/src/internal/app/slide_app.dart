@@ -9,15 +9,12 @@ import 'package:slidex/src/internal/slide_router.dart';
 
 final class SlideApp extends StatefulWidget {
   const SlideApp({
-    required String title,
     required ThemeData theme,
     required List<SlideWidget> slides,
     super.key,
-  })  : _title = title,
-        _theme = theme,
+  })  : _theme = theme,
         _slides = slides;
 
-  final String _title;
   final ThemeData _theme;
   final List<SlideWidget> _slides;
 
@@ -65,7 +62,6 @@ class _SlideAppState extends State<SlideApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: widget._title,
       theme: widget._theme,
       shortcuts: _shortcuts,
       routerConfig: _router.routerConfig,

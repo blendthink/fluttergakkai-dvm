@@ -8,7 +8,6 @@ import 'package:slidex/src/internal/app/slide_app.dart';
 
 void runSlideApp({
   required List<String> args,
-  required String title,
   required ThemeData theme,
   required List<SlideWidget> slides,
 }) {
@@ -27,7 +26,6 @@ void runSlideApp({
   }
 
   final app = SlideApp(
-    title: title,
     theme: theme,
     slides: slides,
   );
