@@ -4,8 +4,8 @@ import 'package:highlight/languages/cpp.dart';
 import 'package:highlight/languages/dart.dart';
 import 'package:highlight/languages/glsl.dart';
 import 'package:highlight/languages/yaml.dart';
-import 'package:slidex/src/highlight/highlight_theme.dart';
-import 'package:slidex/src/highlight/language.dart';
+import 'package:slidex/src/components/highlight/highlight_theme.dart';
+import 'package:slidex/src/components/highlight/language.dart';
 import 'package:slidex/src/internal/home/slide_frame_query.dart';
 
 final class HighlightView extends StatelessWidget {
