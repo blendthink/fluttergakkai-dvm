@@ -44,23 +44,25 @@ final class HighlightView extends StatelessWidget {
   }
 
   List<TextSpan> _convert(List<Node> nodes) {
-    List<TextSpan> spans = [];
+    final spans = <TextSpan>[];
     var currentSpans = spans;
-    List<List<TextSpan>> stack = [];
+    final stack = <List<TextSpan>>[];
 
-    traverse(Node node) {
+    void traverse(Node node) {
       if (node.value != null) {
         currentSpans.add(
           node.className == null
               ? TextSpan(text: node.value)
               : TextSpan(
-                  text: node.value, style: _theme.textStyles[node.className!]),
+                  text: node.value,
+                  style: _theme.textStyles[node.className!],
+                ),
         );
         return;
       }
 
-      if (node.children case List<Node> nodes) {
-        List<TextSpan> tmp = [];
+      if (node.children case final List<Node> nodes) {
+        final tmp = <TextSpan>[];
         currentSpans.add(
           TextSpan(children: tmp, style: _theme.textStyles[node.className!]),
         );
@@ -76,9 +78,7 @@ final class HighlightView extends StatelessWidget {
       }
     }
 
-    for (final node in nodes) {
-      traverse(node);
-    }
+    nodes.forEach(traverse);
 
     return spans;
   }

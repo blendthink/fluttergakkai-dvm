@@ -47,7 +47,7 @@ final class _SlideFrameContent extends StatelessWidget {
     final data = MediaQuery.of(context);
     return MediaQuery(
       data: data.copyWith(
-        textScaleFactor: context.frameScale,
+        textScaler: TextScaler.linear(context.frameScale),
       ),
       child: Stack(
         children: [

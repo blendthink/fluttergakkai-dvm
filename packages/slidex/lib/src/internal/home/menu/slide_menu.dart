@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:slidex/src/internal/home/menu/slide_previews.dart';
 import 'package:slidex/src/internal/home/slide_frame_query.dart';
 import 'package:slidex/src/internal/slide_framework.dart';
-import 'package:flutter/material.dart';
 
 final class SlideMenu extends StatelessWidget {
   const SlideMenu({super.key});

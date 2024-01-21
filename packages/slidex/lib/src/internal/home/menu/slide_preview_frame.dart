@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:slidex/src/internal/home/menu/slide_preview_query.dart';
 import 'package:slidex/src/internal/home/slide_background.dart';
 import 'package:slidex/src/internal/home/slide_frame_query.dart';
 import 'package:slidex/src/internal/slide_framework.dart';
-import 'package:flutter/material.dart';
 
 final class SlidePreviewFrame extends StatelessWidget {
   const SlidePreviewFrame({super.key});
@@ -16,7 +16,7 @@ final class SlidePreviewFrame extends StatelessWidget {
         aspectRatio: 16 / 9,
         child: MediaQuery(
           data: data.copyWith(
-            textScaleFactor: context.previewScale,
+            textScaler: TextScaler.linear(context.previewScale),
           ),
           child: Stack(
             children: [

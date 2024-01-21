@@ -1,10 +1,12 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:slidex/src/internal/home/menu/slide_preview.dart';
 import 'package:slidex/src/internal/home/menu/slide_preview_query.dart';
 import 'package:slidex/src/internal/home/slide_frame_query.dart';
 import 'package:slidex/src/internal/slide_framework.dart';
 import 'package:slidex/src/internal/slide_query.dart';
-import 'package:flutter/material.dart';
-import 'package:scroll_to_index/scroll_to_index.dart';
 
 final class SlidePreviews extends StatefulWidget {
   const SlidePreviews({super.key});
@@ -33,7 +35,9 @@ class _SlidePreviewsState extends State<SlidePreviews> {
     final slides = context.framework.slides;
     final gap = SizedBox(width: 12 * context.frameScale);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _controller.scrollToIndex(context.slideNumber);
+      unawaited(
+        _controller.scrollToIndex(context.slideNumber),
+      );
     });
     return ListView.separated(
       controller: _controller,

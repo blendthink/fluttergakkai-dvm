@@ -56,11 +56,10 @@ final class SlideHome extends StatelessWidget {
                 if (!context.mounted) {
                   return;
                 }
-                window
-                  ..setFrame(
-                    Offset.zero & const Size(640, 360),
-                  )
-                  ..show();
+                await window.setFrame(
+                  Offset.zero & const Size(640, 360),
+                );
+                await window.show();
                 return null;
               },
             ),

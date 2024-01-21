@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:collection/collection.dart';
 import 'package:desktop_multi_window/desktop_multi_window.dart';
 import 'package:flutter/material.dart';
@@ -64,11 +66,15 @@ final class SlideRouter {
     assert(currentIndex > -1, 'No slide found.');
 
     final prevIndex = currentIndex - 1;
-    if (prevIndex < 0) return;
+    if (prevIndex < 0) {
+      return;
+    }
 
     final slideRoute = _slideRoutes[prevIndex];
     routerConfig.go(slideRoute.path);
-    DesktopMultiWindow.invokeMethod(1, "updateSlideIndex", prevIndex);
+    unawaited(
+      DesktopMultiWindow.invokeMethod(1, 'updateSlideIndex', prevIndex),
+    );
   }
 
   void next() {
@@ -77,19 +83,27 @@ final class SlideRouter {
     assert(currentIndex > -1, 'No slide found.');
 
     final nextIndex = currentIndex + 1;
-    if (nextIndex >= _slideRoutes.length) return;
+    if (nextIndex >= _slideRoutes.length) {
+      return;
+    }
 
     final slideRoute = _slideRoutes[nextIndex];
     routerConfig.go(slideRoute.path);
-    DesktopMultiWindow.invokeMethod(1, "updateSlideIndex", nextIndex);
+    unawaited(
+      DesktopMultiWindow.invokeMethod(1, 'updateSlideIndex', nextIndex),
+    );
   }
 
   void goToSlide(int index) {
-    if (index < 0 || index >= _slideRoutes.length) return;
+    if (index < 0 || index >= _slideRoutes.length) {
+      return;
+    }
 
     final slideRoute = _slideRoutes[index];
     routerConfig.go(slideRoute.path);
-    DesktopMultiWindow.invokeMethod(1, "updateSlideIndex", index);
+    unawaited(
+      DesktopMultiWindow.invokeMethod(1, 'updateSlideIndex', index),
+    );
   }
 
   int get currentIndex => _slideRoutes.indexWhere(

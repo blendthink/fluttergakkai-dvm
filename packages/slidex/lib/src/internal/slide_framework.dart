@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:slidex/src/internal/home/menu/slide_menu.dart';
 import 'package:slidex/src/internal/slide_router.dart';
@@ -41,6 +42,23 @@ final class SlideFramework extends InheritedWidget {
     assert(framework != null, 'No SlideFramework found in context');
 
     return framework!;
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+      IterableProperty<SlideWidget>(
+        'slides',
+        slides,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<MenuValueNotifier>(
+        'menuValueNotifier',
+        menuValueNotifier,
+      ),
+    );
   }
 }
 

@@ -1,5 +1,3 @@
-library slidex;
-
 /// A Calculator.
 class Calculator {
   /// Returns [value] plus 1.

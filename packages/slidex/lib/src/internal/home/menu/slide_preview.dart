@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:slidex/src/internal/home/menu/slide_preview_frame.dart';
 import 'package:slidex/src/internal/home/menu/slide_preview_query.dart';
 import 'package:slidex/src/internal/home/slide_frame_query.dart';
 import 'package:slidex/src/internal/slide_query.dart';
-import 'package:flutter/material.dart';
 
 final class SlidePreview extends StatelessWidget {
   const SlidePreview({super.key});
