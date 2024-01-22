@@ -5,6 +5,7 @@
             "type": "dart",
             "request": "launch",
             "name": "macOS",
+            "program": "lib/main.dart",
             "args": [
                 "-d",
                 "macos",
@@ -14,6 +15,7 @@
             "type": "dart",
             "request": "launch",
             "name": "web",
+            "program": "lib/main.dart",
             "args": [
                 "-d",
                 "chrome",
