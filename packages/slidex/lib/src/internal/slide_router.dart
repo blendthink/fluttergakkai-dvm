@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:collection/collection.dart';
 import 'package:desktop_multi_window/desktop_multi_window.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:slidex/src/components/slide_widget.dart';
@@ -72,6 +73,10 @@ final class SlideRouter {
 
     final slideRoute = _slideRoutes[prevIndex];
     routerConfig.go(slideRoute.path);
+
+    if (kIsWeb) {
+      return;
+    }
     unawaited(
       DesktopMultiWindow.invokeMethod(1, 'updateSlideIndex', prevIndex),
     );
@@ -89,6 +94,10 @@ final class SlideRouter {
 
     final slideRoute = _slideRoutes[nextIndex];
     routerConfig.go(slideRoute.path);
+
+    if (kIsWeb) {
+      return;
+    }
     unawaited(
       DesktopMultiWindow.invokeMethod(1, 'updateSlideIndex', nextIndex),
     );
@@ -101,6 +110,10 @@ final class SlideRouter {
 
     final slideRoute = _slideRoutes[index];
     routerConfig.go(slideRoute.path);
+
+    if (kIsWeb) {
+      return;
+    }
     unawaited(
       DesktopMultiWindow.invokeMethod(1, 'updateSlideIndex', index),
     );
