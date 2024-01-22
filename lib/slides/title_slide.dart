@@ -15,7 +15,7 @@ final class TitleSlide extends SlideWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           PresentationTitle(),
-          ScalerGap(84),
+          ScalerGap(64),
           SpeakerLabel(),
           ScalerGap(40),
         ],
