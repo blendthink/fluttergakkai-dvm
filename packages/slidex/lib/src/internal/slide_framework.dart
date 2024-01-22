@@ -1,3 +1,4 @@
+import 'package:desktop_multi_window/desktop_multi_window.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:slidex/src/components/slide_widget.dart';
@@ -9,6 +10,7 @@ final class SlideFramework extends InheritedWidget {
     required SlideRouter router,
     required this.slides,
     required this.menuValueNotifier,
+    required this.windowIdValueNotifier,
     required super.child,
     super.key,
   }) : _router = router;
@@ -19,12 +21,14 @@ final class SlideFramework extends InheritedWidget {
 
   final MenuValueNotifier menuValueNotifier;
 
-  void previous() => _router.previous();
+  final WindowIdValueNotifier windowIdValueNotifier;
 
-  void next() => _router.next();
+  Future<void> previous() async => _router.previous();
 
-  void goToSlide(int index) {
-    _router.goToSlide(index);
+  Future<void> next() async => _router.next();
+
+  Future<void> goToSlide(int index) async {
+    await _router.goToSlide(index);
     menuValueNotifier.close();
   }
 
@@ -59,9 +63,35 @@ final class SlideFramework extends InheritedWidget {
         menuValueNotifier,
       ),
     );
+    properties.add(
+      DiagnosticsProperty<WindowIdValueNotifier>(
+        'windowIdValueNotifier',
+        windowIdValueNotifier,
+      ),
+    );
+  }
+
+  void openWindow(int windowId) {
+    windowIdValueNotifier.update(windowId);
   }
 }
 
 extension SlideFrameworkX on BuildContext {
   SlideFramework get framework => SlideFramework.of(this);
+}
+
+final class WindowIdValueNotifier extends ValueNotifier<int?> {
+  WindowIdValueNotifier() : super(null);
+
+  // ignore: use_setters_to_change_properties
+  void update(int windowId) {
+    value = windowId;
+  }
+
+  Future<void> check() async {
+    final windowIds = await DesktopMultiWindow.getAllSubWindowIds();
+    if (windowIds.isEmpty) {
+      value = null;
+    }
+  }
 }

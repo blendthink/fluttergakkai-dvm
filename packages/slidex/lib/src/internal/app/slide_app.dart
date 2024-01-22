@@ -23,9 +23,11 @@ final class SlideApp extends StatefulWidget {
 }
 
 class _SlideAppState extends State<SlideApp> {
-  late final _router = SlideRouter(slides: widget._slides);
+  late SlideRouter _router;
 
   late MenuValueNotifier _menuValueNotifier;
+
+  late WindowIdValueNotifier _windowIdValueNotifier;
 
   int _slideNumber = 0;
 
@@ -37,6 +39,11 @@ class _SlideAppState extends State<SlideApp> {
   void initState() {
     super.initState();
     _menuValueNotifier = MenuValueNotifier();
+    _windowIdValueNotifier = WindowIdValueNotifier();
+    _router = SlideRouter(
+      slides: widget._slides,
+      windowIdValueNotifier: _windowIdValueNotifier,
+    );
   }
 
   @override
@@ -55,6 +62,7 @@ class _SlideAppState extends State<SlideApp> {
   void dispose() {
     _router.removeListener(_onRouteChange);
     _menuValueNotifier.dispose();
+    _windowIdValueNotifier.dispose();
     super.dispose();
   }
 
@@ -69,6 +77,7 @@ class _SlideAppState extends State<SlideApp> {
         slides: widget._slides,
         router: _router,
         menuValueNotifier: _menuValueNotifier,
+        windowIdValueNotifier: _windowIdValueNotifier,
         child: SlideQuery(
           slideNumber: _slideNumber,
           child: child!,

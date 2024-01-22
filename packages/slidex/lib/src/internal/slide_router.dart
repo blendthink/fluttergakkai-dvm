@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:slidex/src/components/slide_widget.dart';
 import 'package:slidex/src/internal/home/slide_home.dart';
+import 'package:slidex/src/internal/slide_framework.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'shell');
@@ -14,9 +15,13 @@ final shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'shell');
 final class SlideRouter {
   SlideRouter({
     required List<SlideWidget> slides,
-  }) : _slides = slides;
+    required WindowIdValueNotifier windowIdValueNotifier,
+  })  : _slides = slides,
+        _windowIdValueNotifier = windowIdValueNotifier;
 
   final List<SlideWidget> _slides;
+
+  final WindowIdValueNotifier _windowIdValueNotifier;
 
   late final List<_SlideRoute> _slideRoutes = _slides
       .mapIndexed(
@@ -61,7 +66,7 @@ final class SlideRouter {
   void removeListener(void Function() listener) =>
       routerConfig.routeInformationProvider.removeListener(listener);
 
-  void previous() {
+  Future<void> previous() async {
     final currentIndex = this.currentIndex;
 
     assert(currentIndex > -1, 'No slide found.');
@@ -74,15 +79,17 @@ final class SlideRouter {
     final slideRoute = _slideRoutes[prevIndex];
     routerConfig.go(slideRoute.path);
 
-    if (kIsWeb) {
+    await _windowIdValueNotifier.check();
+    final windowId = _windowIdValueNotifier.value;
+    if (kIsWeb || windowId == null) {
       return;
     }
     unawaited(
-      DesktopMultiWindow.invokeMethod(1, 'updateSlideIndex', prevIndex),
+      DesktopMultiWindow.invokeMethod(windowId, 'updateSlideIndex', prevIndex),
     );
   }
 
-  void next() {
+  Future<void> next() async {
     final currentIndex = this.currentIndex;
 
     assert(currentIndex > -1, 'No slide found.');
@@ -95,15 +102,17 @@ final class SlideRouter {
     final slideRoute = _slideRoutes[nextIndex];
     routerConfig.go(slideRoute.path);
 
-    if (kIsWeb) {
+    await _windowIdValueNotifier.check();
+    final windowId = _windowIdValueNotifier.value;
+    if (kIsWeb || windowId == null) {
       return;
     }
     unawaited(
-      DesktopMultiWindow.invokeMethod(1, 'updateSlideIndex', nextIndex),
+      DesktopMultiWindow.invokeMethod(windowId, 'updateSlideIndex', nextIndex),
     );
   }
 
-  void goToSlide(int index) {
+  Future<void> goToSlide(int index) async {
     if (index < 0 || index >= _slideRoutes.length) {
       return;
     }
@@ -111,11 +120,13 @@ final class SlideRouter {
     final slideRoute = _slideRoutes[index];
     routerConfig.go(slideRoute.path);
 
-    if (kIsWeb) {
+    await _windowIdValueNotifier.check();
+    final windowId = _windowIdValueNotifier.value;
+    if (kIsWeb || windowId == null) {
       return;
     }
     unawaited(
-      DesktopMultiWindow.invokeMethod(1, 'updateSlideIndex', index),
+      DesktopMultiWindow.invokeMethod(windowId, 'updateSlideIndex', index),
     );
   }
 

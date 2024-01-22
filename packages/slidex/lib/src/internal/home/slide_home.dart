@@ -23,10 +23,10 @@ final class SlideHome extends StatelessWidget {
         child: Actions(
           actions: <Type, Action<Intent>>{
             BackIntent: CallbackAction<BackIntent>(
-              onInvoke: (_) => context.framework.previous(),
+              onInvoke: (_) async => context.framework.previous(),
             ),
             NextIntent: CallbackAction<NextIntent>(
-              onInvoke: (_) => context.framework.next(),
+              onInvoke: (_) async => context.framework.next(),
             ),
             MenuIntent: CallbackAction<MenuIntent>(
               onInvoke: (_) => context.framework.menu(),
@@ -50,10 +50,9 @@ final class SlideHome extends StatelessWidget {
                   }
                   final callMethod = call.method;
                   if (callMethod == 'previous') {
-                    context.framework.previous();
-                  }
-                  if (callMethod == 'next') {
-                    context.framework.next();
+                    await context.framework.previous();
+                  } else if (callMethod == 'next') {
+                    await context.framework.next();
                   }
                 });
 
@@ -65,6 +64,7 @@ final class SlideHome extends StatelessWidget {
                 if (!context.mounted) {
                   return;
                 }
+                context.framework.openWindow(window.windowId);
 
                 return null;
               },
