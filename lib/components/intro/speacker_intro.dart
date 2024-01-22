@@ -10,7 +10,7 @@ final class SpeakerIntro extends StatelessWidget {
 おかやまん / blendthink
 株式会社ゆめみ
 Flutter テックリード
-将棋・プログラミング''';
+将棋・プログラミング・アニメ''';
     return Text(
       text,
       style: theme.textTheme.bodyLarge?.copyWith(
