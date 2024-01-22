@@ -13,9 +13,11 @@ class Assets {
   Assets._();
 
   static const AssetGenImage speaker = AssetGenImage('assets/speaker.png');
+  static const AssetGenImage spiceAndWolf =
+      AssetGenImage('assets/spice-and-wolf.png');
 
   /// List of all assets
-  static List<AssetGenImage> get values => [speaker];
+  static List<AssetGenImage> get values => [speaker, spiceAndWolf];
 }
 
 class AssetGenImage {
