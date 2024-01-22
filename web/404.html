@@ -27,7 +27,7 @@
         // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
         // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
         // Otherwise, leave pathSegmentsToKeep as 0.
-        const pathSegmentsToKeep = l.pathname.startsWith('/custom_fragment_shader') ? 1 : 0;
+        const pathSegmentsToKeep = l.pathname.startsWith('/fluttergakkai-dvm') ? 1 : 0;
 
         l.replace(
             l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
