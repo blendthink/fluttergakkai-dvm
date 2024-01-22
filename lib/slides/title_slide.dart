@@ -1,5 +1,5 @@
-import 'package:dvm/title/presentation_title.dart';
-import 'package:dvm/title/speaker_label.dart';
+import 'package:dvm/components/title/presentation_title.dart';
+import 'package:dvm/components/title/speaker_label.dart';
 import 'package:flutter/material.dart';
 import 'package:slidex/components.dart';
 
