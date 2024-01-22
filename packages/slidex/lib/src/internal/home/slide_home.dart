@@ -38,6 +38,14 @@ final class SlideHome extends StatelessWidget {
             ),
             PresentationIntent: CallbackAction<PresentationIntent>(
               onInvoke: (_) async {
+                final windowIds = await DesktopMultiWindow.getAllSubWindowIds();
+                if (windowIds.isNotEmpty) {
+                  return;
+                }
+
+                if (!context.mounted) {
+                  return;
+                }
                 final window = await DesktopMultiWindow.createWindow(
                   jsonEncode({
                     'initSlideIndex': context.slideNumber,
