@@ -24,7 +24,9 @@ final class SlidePreviewFrame extends StatelessWidget {
               Material(
                 color: Colors.transparent,
                 child: InkWell(
-                  onTap: () => context.framework.goToSlide(context.slideIndex),
+                  onTap: () async => context.framework.goToSlide(
+                    context.slideIndex,
+                  ),
                   child: SlideFrameQuery(
                     frameHeight: context.previewHeight,
                     child: SizedBox(
