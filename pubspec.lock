@@ -244,7 +244,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_web_plugins:
-    dependency: "direct main"
+    dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -573,7 +573,7 @@ packages:
     source: hosted
     version: "2.4.0"
   window_size:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "plugins/window_size"
       ref: "6c66ad23ee79749f30a8eece542cf54eaf157ed8"

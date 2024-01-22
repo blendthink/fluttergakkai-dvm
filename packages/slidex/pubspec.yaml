@@ -2,6 +2,7 @@ name: slidex
 description: "A new Flutter package project."
 version: 0.0.1
 homepage: https://github.com/blendthink/fluttergakkai-dvm/tree/main/packages/slidex
+publish_to: none
 
 environment:
   sdk: '>=3.2.5 <4.0.0'
@@ -12,11 +13,18 @@ dependencies:
   desktop_multi_window: ^0.2.0
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
   gap: ^3.0.1
   go_router: ^13.0.1
   highlight: ^0.7.0
   meta: ^1.10.0
   scroll_to_index: ^3.0.1
+  window_size:
+    git:
+      url: https://github.com/google/flutter-desktop-embedding.git
+      ref: 6c66ad23ee79749f30a8eece542cf54eaf157ed8
+      path: plugins/window_size
 
 dev_dependencies:
   flutter_test:
