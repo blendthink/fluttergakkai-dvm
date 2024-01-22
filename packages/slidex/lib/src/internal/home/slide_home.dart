@@ -43,7 +43,11 @@ final class SlideHome extends StatelessWidget {
                     'initSlideIndex': context.slideNumber,
                   }),
                 );
+
                 DesktopMultiWindow.setMethodHandler((call, fromWindowId) async {
+                  if (!context.mounted) {
+                    return;
+                  }
                   final callMethod = call.method;
                   if (callMethod == 'previous') {
                     context.framework.previous();
@@ -52,13 +56,16 @@ final class SlideHome extends StatelessWidget {
                     context.framework.next();
                   }
                 });
-                if (!context.mounted) {
-                  return;
-                }
+
                 await window.setFrame(
                   Offset.zero & const Size(640, 360),
                 );
                 await window.show();
+
+                if (!context.mounted) {
+                  return;
+                }
+
                 return null;
               },
             ),
