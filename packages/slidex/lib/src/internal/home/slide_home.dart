@@ -17,70 +17,68 @@ final class SlideHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Focus(
-        autofocus: true,
-        child: Actions(
-          actions: <Type, Action<Intent>>{
-            BackIntent: CallbackAction<BackIntent>(
-              onInvoke: (_) async => context.framework.previous(),
-            ),
-            NextIntent: CallbackAction<NextIntent>(
-              onInvoke: (_) async => context.framework.next(),
-            ),
-            MenuIntent: CallbackAction<MenuIntent>(
-              onInvoke: (_) => context.framework.menu(),
-            ),
-            LicenseIntent: CallbackAction<LicenseIntent>(
-              onInvoke: (_) => showLicensePage(
-                context: context,
-              ),
-            ),
-            PresentationIntent: CallbackAction<PresentationIntent>(
-              onInvoke: (_) async {
-                final windowIds = await DesktopMultiWindow.getAllSubWindowIds();
-                if (windowIds.isNotEmpty) {
-                  return;
-                }
-
-                if (!context.mounted) {
-                  return;
-                }
-                final window = await DesktopMultiWindow.createWindow(
-                  jsonEncode({
-                    'initSlideIndex': context.slideNumber,
-                  }),
-                );
-
-                DesktopMultiWindow.setMethodHandler((call, fromWindowId) async {
-                  if (!context.mounted) {
-                    return;
-                  }
-                  final callMethod = call.method;
-                  if (callMethod == 'previous') {
-                    await context.framework.previous();
-                  } else if (callMethod == 'next') {
-                    await context.framework.next();
-                  }
-                });
-
-                await window.setFrame(
-                  Offset.zero & const Size(640, 360),
-                );
-                await window.show();
-
-                if (!context.mounted) {
-                  return;
-                }
-                context.framework.openWindow(window.windowId);
-
-                return null;
-              },
-            ),
-          },
-          child: SlideFrame(
-            child: _child,
+    return Focus(
+      autofocus: true,
+      child: Actions(
+        actions: <Type, Action<Intent>>{
+          BackIntent: CallbackAction<BackIntent>(
+            onInvoke: (_) async => context.framework.previous(),
           ),
+          NextIntent: CallbackAction<NextIntent>(
+            onInvoke: (_) async => context.framework.next(),
+          ),
+          MenuIntent: CallbackAction<MenuIntent>(
+            onInvoke: (_) => context.framework.menu(),
+          ),
+          LicenseIntent: CallbackAction<LicenseIntent>(
+            onInvoke: (_) => showLicensePage(
+              context: context,
+            ),
+          ),
+          PresentationIntent: CallbackAction<PresentationIntent>(
+            onInvoke: (_) async {
+              final windowIds = await DesktopMultiWindow.getAllSubWindowIds();
+              if (windowIds.isNotEmpty) {
+                return;
+              }
+
+              if (!context.mounted) {
+                return;
+              }
+              final window = await DesktopMultiWindow.createWindow(
+                jsonEncode({
+                  'initSlideIndex': context.slideNumber,
+                }),
+              );
+
+              DesktopMultiWindow.setMethodHandler((call, fromWindowId) async {
+                if (!context.mounted) {
+                  return;
+                }
+                final callMethod = call.method;
+                if (callMethod == 'previous') {
+                  await context.framework.previous();
+                } else if (callMethod == 'next') {
+                  await context.framework.next();
+                }
+              });
+
+              await window.setFrame(
+                Offset.zero & const Size(640, 360),
+              );
+              await window.show();
+
+              if (!context.mounted) {
+                return;
+              }
+              context.framework.openWindow(window.windowId);
+
+              return null;
+            },
+          ),
+        },
+        child: SlideFrame(
+          child: _child,
         ),
       ),
     );
