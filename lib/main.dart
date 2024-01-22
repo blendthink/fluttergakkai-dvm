@@ -10,10 +10,13 @@ import 'package:window_size/window_size.dart';
 
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    usePathUrlStrategy();
+  }
+
   if (!kIsWeb && Platform.isMacOS) {
     setWindowMinSize(const Size(640, 360));
   }
-  usePathUrlStrategy();
 
   runSlideApp(
     args: args,
