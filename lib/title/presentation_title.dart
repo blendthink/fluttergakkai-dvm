@@ -7,7 +7,7 @@ final class PresentationTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Text(
-      'Dart Version Manager (dvm) を開発してみたお話',
+      'Dart Version Manager (DVM) を\n開発してみたお話',
       style: theme.textTheme.displaySmall,
     );
   }
