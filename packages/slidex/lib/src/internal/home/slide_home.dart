@@ -34,7 +34,6 @@ final class SlideHome extends StatelessWidget {
             LicenseIntent: CallbackAction<LicenseIntent>(
               onInvoke: (_) => showLicensePage(
                 context: context,
-                applicationName: 'Custom Fragment Shader',
               ),
             ),
             PresentationIntent: CallbackAction<PresentationIntent>(
