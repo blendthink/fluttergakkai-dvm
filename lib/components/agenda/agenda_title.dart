@@ -12,7 +12,7 @@ final class AgendaTitle extends StatelessWidget {
     final theme = Theme.of(context);
     return Row(
       children: [
-        const ScalerGap(12),
+        const ScalerGap(24),
         Text(
           '${_agenda.index + 1}. ${_agenda.title}',
           style: theme.textTheme.titleMedium,
