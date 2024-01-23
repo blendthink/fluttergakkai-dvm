@@ -1,10 +1,11 @@
+import 'package:dvm/data/agenda.dart';
 import 'package:flutter/material.dart';
 import 'package:slidex/components.dart';
 
 final class AgendaTitle extends StatelessWidget {
-  const AgendaTitle(this._title, {super.key});
+  const AgendaTitle(this._agenda, {super.key});
 
-  final String _title;
+  final Agenda _agenda;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ final class AgendaTitle extends StatelessWidget {
       children: [
         const ScalerGap(12),
         Text(
-          '\u2022  $_title',
+          '${_agenda.index + 1}. ${_agenda.title}',
           style: theme.textTheme.titleMedium,
         ),
       ],

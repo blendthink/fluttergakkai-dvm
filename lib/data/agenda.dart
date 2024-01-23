@@ -1,17 +1,12 @@
-final class Agenda {
-  const Agenda._();
+enum Agenda {
+  agenda01('DVM の概要'),
+  agenda02('開発した背景'),
+  agenda03('機能の実装方法'),
+  agenda04('苦労した点'),
+  agenda05('今後の展望'),
+  ;
 
-  static const agenda01 = 'DVM の概要';
-  static const agenda02 = '開発した背景';
-  static const agenda03 = '機能の実装方法';
-  static const agenda04 = '苦労した点';
-  static const agenda05 = '今後の展望';
+  const Agenda(this.title);
 
-  static const values = [
-    agenda01,
-    agenda02,
-    agenda03,
-    agenda04,
-    agenda05,
-  ];
+  final String title;
 }
