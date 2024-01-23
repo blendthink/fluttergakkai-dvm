@@ -16,8 +16,9 @@ final class AgendaSlide extends SlideWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ScalerGap(12),
+            ScalerGap(24),
             AgendaHeader(),
+            ScalerGap(12),
             AgendaTitle(Agenda.agenda01),
             AgendaTitle(Agenda.agenda02),
             AgendaTitle(Agenda.agenda03),
