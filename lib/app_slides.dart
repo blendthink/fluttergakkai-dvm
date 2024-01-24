@@ -1,3 +1,4 @@
+import 'package:dvm/slides/agenda01/agenda01_logo_slide.dart';
 import 'package:dvm/slides/agenda_slide.dart';
 import 'package:dvm/slides/anime_slide.dart';
 import 'package:dvm/slides/highlighted_agenda01_slide.dart';
@@ -16,6 +17,7 @@ const appSlides = <SlideWidget>[
   AnimeSlide(),
   AgendaSlide(),
   HighlightedAgenda01Slide(),
+  Agenda01LogoSlide(),
   HighlightedAgenda02Slide(),
   HighlightedAgenda03Slide(),
   HighlightedAgenda04Slide(),
