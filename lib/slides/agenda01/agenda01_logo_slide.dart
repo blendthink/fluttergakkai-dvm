@@ -37,5 +37,7 @@ final class Agenda01LogoSlide extends SlideWidget {
 
   @override
   String get speakerNote => '''
-DVM は、プロジェクトごとに、 Dart SDK のバージョンを管理する、 CLI ツールです。''';
+DVM は、プロジェクトごとに、 Dart SDK のバージョンを管理する、 CLI ツールです。
+
+みなさん、すでにお気づきかもしれませんが''';
 }
