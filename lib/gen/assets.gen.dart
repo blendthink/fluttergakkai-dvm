@@ -12,12 +12,13 @@ import 'package:flutter/widgets.dart';
 class Assets {
   Assets._();
 
+  static const AssetGenImage logo = AssetGenImage('assets/logo.png');
   static const AssetGenImage speaker = AssetGenImage('assets/speaker.png');
   static const AssetGenImage spiceAndWolf =
       AssetGenImage('assets/spice-and-wolf.png');
 
   /// List of all assets
-  static List<AssetGenImage> get values => [speaker, spiceAndWolf];
+  static List<AssetGenImage> get values => [logo, speaker, spiceAndWolf];
 }
 
 class AssetGenImage {
