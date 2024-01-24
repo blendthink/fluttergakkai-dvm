@@ -1,3 +1,4 @@
+import 'package:dvm/slides/agenda01/agenda01_figure_slide.dart';
 import 'package:dvm/slides/agenda01/agenda01_fvm_slide.dart';
 import 'package:dvm/slides/agenda01/agenda01_logo_slide.dart';
 import 'package:dvm/slides/agenda_slide.dart';
@@ -20,6 +21,7 @@ const appSlides = <SlideWidget>[
   HighlightedAgenda01Slide(),
   Agenda01LogoSlide(),
   Agenda01FvmSlide(),
+  Agenda01FigureSlide(),
   HighlightedAgenda02Slide(),
   HighlightedAgenda03Slide(),
   HighlightedAgenda04Slide(),
