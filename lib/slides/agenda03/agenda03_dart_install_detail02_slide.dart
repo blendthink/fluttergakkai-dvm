@@ -17,7 +17,7 @@ final class Agenda03DartInstallDetail02Slide extends SlideWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Assets.dartGetList.image(
-            height: 200 * scale,
+            height: 260 * scale,
             fit: BoxFit.fitHeight,
           ),
           const ScalerGap(8),
