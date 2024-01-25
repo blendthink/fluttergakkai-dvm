@@ -12,6 +12,7 @@ import 'package:flutter/widgets.dart';
 class Assets {
   Assets._();
 
+  static const AssetGenImage bff = AssetGenImage('assets/bff.png');
   static const AssetGenImage dart3 = AssetGenImage('assets/dart3.png');
   static const AssetGenImage dvmHomebrew =
       AssetGenImage('assets/dvm-homebrew.png');
@@ -27,6 +28,7 @@ class Assets {
 
   /// List of all assets
   static List<AssetGenImage> get values => [
+        bff,
         dart3,
         dvmHomebrew,
         dvmPubDev,
