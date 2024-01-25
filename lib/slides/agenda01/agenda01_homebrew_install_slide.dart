@@ -27,5 +27,8 @@ brew install blendfactory/tap/dvm''';
 
   @override
   String get speakerNote => '''
-ご覧のように Homebrew tap で追加したリポジトリから dvm をインストールします。''';
+ご覧のように Homebrew tap で追加したリポジトリから dvm をインストールします。
+
+これらのようにして dvm コマンドを利用できるようになります。
+実際に使用する際のコマンドについては、FVM と似ているためここでの紹介は省略します。''';
 }
