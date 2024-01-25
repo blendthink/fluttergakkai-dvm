@@ -56,5 +56,5 @@ final class Agenda01ReleaseSlide extends SlideWidget {
 
   @override
   String get speakerNote => '''
-早速、DVM を使ってみたいという方は、 pub.dev と Homebrew tap で公開していますので、ぜひご利用ください。''';
+早速、DVM を使ってみたいという方は、 pub.dev や Homebrew 経由で利用できるようにしていますので、ぜひご利用ください。''';
 }
