@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:highlight/highlight_core.dart';
+import 'package:highlight/languages/bash.dart';
 import 'package:highlight/languages/cpp.dart';
 import 'package:highlight/languages/dart.dart';
 import 'package:highlight/languages/glsl.dart';
@@ -34,6 +35,7 @@ final class HighlightView extends StatelessWidget {
         Language.cpp => cpp,
         Language.glsl => glsl,
         Language.yaml => yaml,
+        Language.bash => bash,
       };
       highlight.registerLanguage(language.name, mode);
     }

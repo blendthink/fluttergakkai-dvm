@@ -3,4 +3,5 @@ enum Language {
   cpp,
   glsl,
   yaml,
+  bash,
 }
