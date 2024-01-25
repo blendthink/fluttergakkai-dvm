@@ -16,6 +16,8 @@ class Assets {
   static const AssetGenImage bff = AssetGenImage('assets/bff.png');
   static const AssetGenImage dartDownloadUrls =
       AssetGenImage('assets/dart-download-urls.png');
+  static const AssetGenImage dartGetList =
+      AssetGenImage('assets/dart-get-list.png');
   static const AssetGenImage dart3 = AssetGenImage('assets/dart3.png');
   static const AssetGenImage docusaurus =
       AssetGenImage('assets/docusaurus.png');
@@ -38,6 +40,7 @@ class Assets {
         astro,
         bff,
         dartDownloadUrls,
+        dartGetList,
         dart3,
         docusaurus,
         dvmHomebrew,
