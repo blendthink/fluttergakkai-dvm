@@ -33,5 +33,5 @@ final class HighlightedAgenda02Slide extends SlideWidget {
 
   @override
   String get speakerNote => '''
-''';
+それでは次に、DVM を開発した背景についてお話します。''';
 }
