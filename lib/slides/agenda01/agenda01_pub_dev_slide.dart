@@ -36,5 +36,6 @@ final class Agenda01PubDevSlide extends SlideWidget {
 
   @override
   String get speakerNote => '''
-''';
+pub.dev には dvmx という名前で公開しています。
+本当は dvm という名前で公開したかったのですが、6年前に既に dvm という名前で公開しているパッケージがあったため、妥協して dvmx という名前にしています。''';
 }
