@@ -14,6 +14,8 @@ class Assets {
 
   static const AssetGenImage astro = AssetGenImage('assets/astro.png');
   static const AssetGenImage bff = AssetGenImage('assets/bff.png');
+  static const AssetGenImage dartDownloadUrls =
+      AssetGenImage('assets/dart-download-urls.png');
   static const AssetGenImage dart3 = AssetGenImage('assets/dart3.png');
   static const AssetGenImage docusaurus =
       AssetGenImage('assets/docusaurus.png');
@@ -35,6 +37,7 @@ class Assets {
   static List<AssetGenImage> get values => [
         astro,
         bff,
+        dartDownloadUrls,
         dart3,
         docusaurus,
         dvmHomebrew,
