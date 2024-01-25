@@ -33,6 +33,8 @@ class Assets {
       AssetGenImage('assets/github-project.png');
   static const AssetGenImage homebrew = AssetGenImage('assets/homebrew.png');
   static const AssetGenImage logo = AssetGenImage('assets/logo.png');
+  static const AssetGenImage motivation =
+      AssetGenImage('assets/motivation.png');
   static const AssetGenImage pubDev = AssetGenImage('assets/pub-dev.png');
   static const AssetGenImage speaker = AssetGenImage('assets/speaker.png');
   static const AssetGenImage spiceAndWolf =
@@ -55,6 +57,7 @@ class Assets {
         githubProject,
         homebrew,
         logo,
+        motivation,
         pubDev,
         speaker,
         spiceAndWolf,
