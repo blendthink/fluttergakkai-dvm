@@ -1,19 +1,25 @@
 import 'package:dvm/data/agenda.dart';
+import 'package:dvm/gen/assets.gen.dart';
 import 'package:dvm/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:slidex/components.dart';
+import 'package:slidex/slidex.dart';
 
 final class Agenda01FigureSlide extends SlideWidget {
   const Agenda01FigureSlide({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const body = Center(
+    final scale = context.frameScale;
+    final body = Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.cloud_outlined),
-          Icon(Icons.storage),
+          Assets.structure.image(
+            width: 360 * scale,
+            fit: BoxFit.fitWidth,
+          ),
+          const ScalerGap(8),
         ],
       ),
     );
