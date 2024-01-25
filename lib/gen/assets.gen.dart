@@ -13,13 +13,16 @@ class Assets {
   Assets._();
 
   static const AssetGenImage fvm = AssetGenImage('assets/fvm.png');
+  static const AssetGenImage homebrew = AssetGenImage('assets/homebrew.png');
   static const AssetGenImage logo = AssetGenImage('assets/logo.png');
+  static const AssetGenImage pubDev = AssetGenImage('assets/pub-dev.png');
   static const AssetGenImage speaker = AssetGenImage('assets/speaker.png');
   static const AssetGenImage spiceAndWolf =
       AssetGenImage('assets/spice-and-wolf.png');
 
   /// List of all assets
-  static List<AssetGenImage> get values => [fvm, logo, speaker, spiceAndWolf];
+  static List<AssetGenImage> get values =>
+      [fvm, homebrew, logo, pubDev, speaker, spiceAndWolf];
 }
 
 class AssetGenImage {
