@@ -1,6 +1,8 @@
 import 'package:dvm/slides/agenda01/agenda01_figure_slide.dart';
 import 'package:dvm/slides/agenda01/agenda01_fvm_slide.dart';
+import 'package:dvm/slides/agenda01/agenda01_homebrew_slide.dart';
 import 'package:dvm/slides/agenda01/agenda01_logo_slide.dart';
+import 'package:dvm/slides/agenda01/agenda01_pub_dev_slide.dart';
 import 'package:dvm/slides/agenda01/agenda01_release_slide.dart';
 import 'package:dvm/slides/agenda_slide.dart';
 import 'package:dvm/slides/anime_slide.dart';
@@ -24,6 +26,8 @@ const appSlides = <SlideWidget>[
   Agenda01FvmSlide(),
   Agenda01FigureSlide(),
   Agenda01ReleaseSlide(),
+  Agenda01PubDevSlide(),
+  Agenda01HomebrewSlide(),
   HighlightedAgenda02Slide(),
   HighlightedAgenda03Slide(),
   HighlightedAgenda04Slide(),
