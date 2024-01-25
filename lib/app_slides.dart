@@ -14,7 +14,6 @@ import 'package:dvm/slides/highlighted_agenda01_slide.dart';
 import 'package:dvm/slides/highlighted_agenda02_slide.dart';
 import 'package:dvm/slides/highlighted_agenda03_slide.dart';
 import 'package:dvm/slides/highlighted_agenda04_slide.dart';
-import 'package:dvm/slides/highlighted_agenda05_slide.dart';
 import 'package:dvm/slides/intro_slide.dart';
 import 'package:dvm/slides/outro_slide.dart';
 import 'package:dvm/slides/title_slide.dart';
@@ -39,6 +38,5 @@ const appSlides = <SlideWidget>[
   Ageda02BffSlide(),
   HighlightedAgenda03Slide(),
   HighlightedAgenda04Slide(),
-  HighlightedAgenda05Slide(),
   OutroSlide(),
 ];

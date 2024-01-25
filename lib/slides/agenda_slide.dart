@@ -23,7 +23,6 @@ final class AgendaSlide extends SlideWidget {
             AgendaTitle(Agenda.agenda02),
             AgendaTitle(Agenda.agenda03),
             AgendaTitle(Agenda.agenda04),
-            AgendaTitle(Agenda.agenda05),
             ScalerGap(36),
           ],
         ),

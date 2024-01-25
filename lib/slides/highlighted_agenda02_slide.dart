@@ -23,7 +23,6 @@ final class HighlightedAgenda02Slide extends SlideWidget {
             AgendaTitle(Agenda.agenda02, isHighlighte: true),
             AgendaTitle(Agenda.agenda03),
             AgendaTitle(Agenda.agenda04),
-            AgendaTitle(Agenda.agenda05),
             ScalerGap(36),
           ],
         ),
