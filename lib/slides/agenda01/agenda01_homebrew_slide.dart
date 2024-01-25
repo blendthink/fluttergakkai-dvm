@@ -36,5 +36,5 @@ final class Agenda01HomebrewSlide extends SlideWidget {
 
   @override
   String get speakerNote => '''
-''';
+Homebrew 経由して利用する場合は、ご覧のように GitHub で Homebrew tap 用のリポジトリを公開していますのでこれを使います。''';
 }
