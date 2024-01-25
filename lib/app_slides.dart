@@ -6,6 +6,7 @@ import 'package:dvm/slides/agenda01/agenda01_logo_slide.dart';
 import 'package:dvm/slides/agenda01/agenda01_pub_dev_install_slide.dart';
 import 'package:dvm/slides/agenda01/agenda01_pub_dev_slide.dart';
 import 'package:dvm/slides/agenda01/agenda01_release_slide.dart';
+import 'package:dvm/slides/agenda02/agenda02_asdf_slide.dart';
 import 'package:dvm/slides/agenda02/agenda02_bff_slide.dart';
 import 'package:dvm/slides/agenda02/agenda02_dart3_slide.dart';
 import 'package:dvm/slides/agenda02/agenda02_feel_depressed_slide.dart';
@@ -50,6 +51,7 @@ const appSlides = <SlideWidget>[
   Agenda02Dart3Slide(),
   Ageda02BffSlide(),
   Agenda02FeelDepressedSlide(),
+  Agenda02AsdfSlide(),
   HighlightedAgenda03Slide(),
   Agenda03DartInstallTitleSlide(),
   Agenda03DartInstallDetail01Slide(),
