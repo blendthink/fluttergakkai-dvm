@@ -8,6 +8,7 @@ import 'package:dvm/slides/agenda01/agenda01_pub_dev_slide.dart';
 import 'package:dvm/slides/agenda01/agenda01_release_slide.dart';
 import 'package:dvm/slides/agenda02/agenda02_bff_slide.dart';
 import 'package:dvm/slides/agenda02/agenda02_dart3_slide.dart';
+import 'package:dvm/slides/agenda03/agenda03_dart_install_detail01_slide.dart';
 import 'package:dvm/slides/agenda03/agenda03_dart_install_title_slide.dart';
 import 'package:dvm/slides/agenda04/agenda04_document_page_description_slide.dart';
 import 'package:dvm/slides/agenda04/agenda04_document_page_slide.dart';
@@ -46,6 +47,7 @@ const appSlides = <SlideWidget>[
   Ageda02BffSlide(),
   HighlightedAgenda03Slide(),
   Agenda03DartInstallTitleSlide(),
+  Agenda03DartInstallDetail01Slide(),
   HighlightedAgenda04Slide(),
   Agenda04LatestOptionSlide(),
   Agenda04LatestOptionDescriptionSlide(),
