@@ -25,6 +25,8 @@ class Assets {
       AssetGenImage('assets/dvm-homebrew.png');
   static const AssetGenImage dvmPubDev =
       AssetGenImage('assets/dvm-pub-dev.png');
+  static const AssetGenImage feelDepressed =
+      AssetGenImage('assets/feel-depressed.png');
   static const AssetGenImage fvm = AssetGenImage('assets/fvm.png');
   static const AssetGenImage githubProject =
       AssetGenImage('assets/github-project.png');
@@ -46,6 +48,7 @@ class Assets {
         docusaurus,
         dvmHomebrew,
         dvmPubDev,
+        feelDepressed,
         fvm,
         githubProject,
         homebrew,
