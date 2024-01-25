@@ -10,6 +10,7 @@ import 'package:dvm/slides/agenda02/agenda02_bff_slide.dart';
 import 'package:dvm/slides/agenda02/agenda02_dart3_slide.dart';
 import 'package:dvm/slides/agenda04/agenda04_document_page_description_slide.dart';
 import 'package:dvm/slides/agenda04/agenda04_document_page_slide.dart';
+import 'package:dvm/slides/agenda04/agenda04_github_action_description_slide.dart';
 import 'package:dvm/slides/agenda04/agenda04_github_action_slide.dart';
 import 'package:dvm/slides/agenda04/agenda04_github_project_slide.dart';
 import 'package:dvm/slides/agenda04/agenda04_latest_option_description_slide.dart';
@@ -49,6 +50,7 @@ const appSlides = <SlideWidget>[
   Agenda04DocumentPageSlide(),
   Agenda04DocumentPageDescriptionSlide(),
   Agenda04GithubActionSlide(),
+  Agenda04GithubActionDescriptionSlide(),
   Agenda04GithubProjectSlide(),
   OutroSlide(),
 ];
