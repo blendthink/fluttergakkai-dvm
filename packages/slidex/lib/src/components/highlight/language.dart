@@ -4,4 +4,5 @@ enum Language {
   glsl,
   yaml,
   bash,
+  json,
 }

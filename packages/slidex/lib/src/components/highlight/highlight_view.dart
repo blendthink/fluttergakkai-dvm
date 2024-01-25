@@ -4,6 +4,7 @@ import 'package:highlight/languages/bash.dart';
 import 'package:highlight/languages/cpp.dart';
 import 'package:highlight/languages/dart.dart';
 import 'package:highlight/languages/glsl.dart';
+import 'package:highlight/languages/json.dart';
 import 'package:highlight/languages/yaml.dart';
 import 'package:slidex/src/components/highlight/highlight_theme.dart';
 import 'package:slidex/src/components/highlight/language.dart';
@@ -36,6 +37,7 @@ final class HighlightView extends StatelessWidget {
         Language.glsl => glsl,
         Language.yaml => yaml,
         Language.bash => bash,
+        Language.json => json,
       };
       highlight.registerLanguage(language.name, mode);
     }
