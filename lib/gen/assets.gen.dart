@@ -19,6 +19,8 @@ class Assets {
   static const AssetGenImage dvmPubDev =
       AssetGenImage('assets/dvm-pub-dev.png');
   static const AssetGenImage fvm = AssetGenImage('assets/fvm.png');
+  static const AssetGenImage githubProject =
+      AssetGenImage('assets/github-project.png');
   static const AssetGenImage homebrew = AssetGenImage('assets/homebrew.png');
   static const AssetGenImage logo = AssetGenImage('assets/logo.png');
   static const AssetGenImage pubDev = AssetGenImage('assets/pub-dev.png');
@@ -33,6 +35,7 @@ class Assets {
         dvmHomebrew,
         dvmPubDev,
         fvm,
+        githubProject,
         homebrew,
         logo,
         pubDev,
