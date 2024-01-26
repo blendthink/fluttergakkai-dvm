@@ -44,19 +44,27 @@ final class _AnimatedTextList extends StatefulWidget {
 }
 
 class _AnimatedTextListState extends State<_AnimatedTextList> {
-  double _opacity = 0;
+  double _leftOpacity = 0;
+  double _rightOpacity = 0;
 
   @override
   void initState() {
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await Future<void>.delayed(const Duration(seconds: 1));
+      await Future<void>.delayed(const Duration(seconds: 2));
       if (!mounted) {
         return;
       }
       setState(() {
-        _opacity = 1;
+        _leftOpacity = 1;
+      });
+      await Future<void>.delayed(const Duration(seconds: 2));
+      if (!mounted) {
+        return;
+      }
+      setState(() {
+        _rightOpacity = 1;
       });
     });
   }
@@ -65,25 +73,33 @@ class _AnimatedTextListState extends State<_AnimatedTextList> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textStyle = theme.textTheme.titleMedium;
-    return AnimatedOpacity(
-      opacity: _opacity,
-      duration: const Duration(seconds: 2),
-      curve: Curves.easeIn,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Text(
+    const duration = Duration(seconds: 2);
+    const curve = Curves.easeIn;
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        AnimatedOpacity(
+          opacity: _leftOpacity,
+          duration: duration,
+          curve: curve,
+          child: Text(
             'プロジェクトごとに Dart SDK \nのバージョンが違う',
             style: textStyle,
             textAlign: TextAlign.center,
           ),
-          Text(
+        ),
+        AnimatedOpacity(
+          opacity: _rightOpacity,
+          duration: duration,
+          curve: curve,
+          child: Text(
             'Dart SDK のバージョンを \n毎回切り替えるのは面倒',
             style: textStyle,
             textAlign: TextAlign.center,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
