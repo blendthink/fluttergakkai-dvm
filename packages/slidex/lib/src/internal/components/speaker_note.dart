@@ -11,11 +11,14 @@ final class SpeakerNote extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Text(
-          _note,
-          style: Theme.of(context).textTheme.titleMedium,
+      child: SizedBox(
+        width: MediaQuery.sizeOf(context).width,
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Text(
+            _note,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
         ),
       ),
     );
