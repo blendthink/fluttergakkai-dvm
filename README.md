@@ -2,6 +2,8 @@
 
 ## イベントページ
 
+<img src="./docs/flutter-gakkai.png" width=320 alt="第 5 回 FlutterGakkai @渋谷" />
+
 https://fluttergakkai.connpass.com/event/304163/
 
 ## 発表タイトル
