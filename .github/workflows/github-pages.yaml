@@ -22,12 +22,13 @@ jobs:
         id: repo
         run: echo "name=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}" >> $GITHUB_OUTPUT
       - name: Fetch fvm-config
-        uses: kuhnroyal/flutter-fvm-config-action@v1
+        id: fvm-config-action
+        uses: kuhnroyal/flutter-fvm-config-action@v2
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: ${{ env.FLUTTER_CHANNEL }}
+          flutter-version: ${{ steps.fvm-config-action.outputs.FLUTTER_VERSION }}
+          channel: ${{ steps.fvm-config-action.outputs.FLUTTER_CHANNEL }}
           cache: true
       - name: Install dependencies
         run: flutter pub get
