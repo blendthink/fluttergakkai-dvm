@@ -39,5 +39,5 @@ final class Agenda03DartInstallDetail02Slide extends SlideWidget {
   String get speakerNote => '''
 ふとある時、「あれ？そういえば、このドキュメントページではどうやって取得しているんだ？」と疑問に思い、Chrome の開発者ツールで通信を確認してみました。
 
-すると、Google Storage API を利用していることが分かり、どうやら認証なども必要なさそうだったのでそれを使うことにしました。''';
+すると、Google Storage API を利用していることが分かり、どうやら認証なども必要なさそうだったのでこれを使わせていただくことにしました。''';
 }
