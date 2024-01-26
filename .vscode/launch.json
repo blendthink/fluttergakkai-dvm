@@ -6,6 +6,7 @@
             "request": "launch",
             "name": "macOS",
             "program": "lib/main.dart",
+            "flutterMode": "profile",
             "args": [
                 "-d",
                 "macos",
@@ -16,6 +17,7 @@
             "request": "launch",
             "name": "web",
             "program": "lib/main.dart",
+            "flutterMode": "profile",
             "args": [
                 "-d",
                 "chrome",
