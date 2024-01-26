@@ -1,7 +1,9 @@
 import 'dart:convert';
 
 import 'package:desktop_multi_window/desktop_multi_window.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:slidex/src/internal/components/speaker_note.dart';
 import 'package:slidex/src/internal/home/slide_frame.dart';
 import 'package:slidex/src/internal/slide_framework.dart';
 import 'package:slidex/src/internal/slide_intents.dart';
@@ -17,6 +19,38 @@ final class SlideHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Widget page;
+    if (kIsWeb) {
+      final slides = context.framework.slides;
+      final slide = slides[context.slideNumber];
+      final theme = Theme.of(context);
+      final textTitleMedium = theme.textTheme.titleMedium;
+      final noteTheme = theme.copyWith(
+        textTheme: theme.textTheme.copyWith(
+          titleMedium: textTitleMedium?.copyWith(
+            color: Colors.black,
+          ),
+        ),
+      );
+      page = Column(
+        children: [
+          SlideFrame(
+            child: _child,
+          ),
+          Theme(
+            data: noteTheme,
+            child: SpeakerNote(
+              slide.speakerNote,
+            ),
+          ),
+        ],
+      );
+    } else {
+      page = SlideFrame(
+        child: _child,
+      );
+    }
+
     return Focus(
       autofocus: true,
       child: Actions(
@@ -77,9 +111,7 @@ final class SlideHome extends StatelessWidget {
             },
           ),
         },
-        child: SlideFrame(
-          child: _child,
-        ),
+        child: page,
       ),
     );
   }
