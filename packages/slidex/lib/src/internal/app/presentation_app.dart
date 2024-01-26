@@ -4,6 +4,7 @@ import 'package:desktop_multi_window/desktop_multi_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:slidex/src/components/slide_widget.dart';
+import 'package:slidex/src/internal/components/speaker_note.dart';
 import 'package:slidex/src/internal/slide_intents.dart';
 
 final class PresentationApp extends StatefulWidget {
@@ -51,7 +52,7 @@ class _PresentationAppState extends State<PresentationApp> {
 
   @override
   Widget build(BuildContext context) {
-    final speakerNote = widget._slides[_slideIndex].speakerNote;
+    final note = widget._slides[_slideIndex].speakerNote;
     return MaterialApp(
       shortcuts: _shortcuts,
       actions: <Type, Action<Intent>>{
@@ -63,15 +64,7 @@ class _PresentationAppState extends State<PresentationApp> {
         ),
       },
       home: Scaffold(
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Text(
-              speakerNote,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ),
-        ),
+        body: SpeakerNote(note),
       ),
     );
   }
