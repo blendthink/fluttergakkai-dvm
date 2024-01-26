@@ -84,11 +84,12 @@ final appContainer = ProviderContainer(
 
   @override
   String get speakerNote => '''
-Flutter でいうところの ProviderScope のようなものがないため、それぞれのコマンドの処理で Provider を使うことが難しかったため、少し違和感はありますが、右のように ProviderContainer をグローバルで保持することにしました。
+Flutter でいうところの ProviderScope のようなものがないため、それぞれのコマンドの処理で Provider を取得することが難しかったため、少し違和感はありますが、右のコードように ProviderContainer をグローバルで保持することにしました。
 
-このようにすることで、verbose フラグが指定されていた場合に、ログレベルを変更してより詳細なログを表示するために ProviderContainer の updateOverride メソッドで更新して、更新したものをそれぞれのコマンドの処理で簡単に使えるようになりました。
+このようにすることで、左のコードのように verbose フラグが指定されていた場合に、ログレベルを変更してより詳細なログを表示するために ProviderContainer の updateOverride メソッドで Provider を更新して、更新したものをそれぞれのコマンドの処理で簡単に使えるようになりました。
 
 このようにグローバルで定義しない場合は、更新後の ProviderContainer を AppCommandRunner のコンストラクタで追加されている ReleaseCommand や InstallCommand などのコマンドにどうにか渡さなければならず、少し骨が折れそうです。
 
-公式が推奨している args パッケージがより最適化されたり、Flutter の ProviderScope のようなものが開発されたりすれば、より快適に実装できるかもしれませんが、現状では難しそうです。''';
+公式が推奨している args パッケージがより最適化されたり、Flutter の ProviderScope のようなものが開発されたりすれば、より快適に実装できるかもしれませんが、現状では難しそうです。
+もし、より良い方法があれば教えていただけると助かります。''';
 }
