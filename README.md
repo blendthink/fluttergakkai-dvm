@@ -17,3 +17,11 @@ https://blendthink.github.io/fluttergakkai-dvm/
 ## DVM のリポジトリ
 
 https://github.com/blendfactory/dvm
+
+
+## その他
+
+一部資料の中で、いらすとや 様の素材を使用させていただいています。
+
+https://www.irasutoya.com/
+
