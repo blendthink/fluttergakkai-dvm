@@ -37,10 +37,12 @@ final class SlideHome extends StatelessWidget {
           SlideFrame(
             child: _child,
           ),
-          Theme(
-            data: noteTheme,
-            child: SpeakerNote(
-              slide.speakerNote,
+          Expanded(
+            child: Theme(
+              data: noteTheme,
+              child: SpeakerNote(
+                slide.speakerNote,
+              ),
             ),
           ),
         ],
