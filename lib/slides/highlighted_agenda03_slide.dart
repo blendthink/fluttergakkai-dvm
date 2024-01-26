@@ -32,5 +32,5 @@ final class HighlightedAgenda03Slide extends SlideWidget {
 
   @override
   String get speakerNote => '''
-次に、DVM を開発するにあたって、工夫した点や苦労した点をいくつか紹介します。''';
+次に、DVM を開発するにあたって、工夫した点や苦労した点を少しだけ紹介します。''';
 }
